@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafios e Pontos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .challenge {
+            background: #e9ffe9;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 5px solid #4CAF50;
+        }
+        button {
+            padding: 10px 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ganhe Pontos por Ação!</h1>
+        
+        <div class="challenge">
+            <h2>Desafio 1: Limpeza de Praias</h2>
+            <p>Participe de um evento de limpeza de praia e ganhe 50 pontos!</p>
+            <button onclick="ganharPontos(50)">Completar Desafio</button>
+        </div>
+
+        <div class="challenge">
+            <h2>Desafio 2: Ideia Inovadora</h2>
+            <p>Contribua com uma ideia inovadora para sustentabilidade e ganhe 30 pontos!</p>
+            <button onclick="ganharPontos(30)">Enviar Ideia</button>
+        </div>
+
+        <div class="challenge">
+            <h2>Desafio 3: Limpeza de Parque</h2>
+            <p>Participe de um evento de limpeza em um parque e ganhe 40 pontos!</p>
+            <button onclick="ganharPontos(40)">Completar Desafio</button>
+        </div>
+
+        <h3 id="pontos">Pontos Totais: 0</h3>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Desafios Sustentáveis</p>
+    </footer>
+
+    <script>
+        let totalPontos = 0;
+
+        function ganharPontos(pontos) {
+            totalPontos += pontos;
+            document.getElementById('pontos').innerText = `Pontos Totais: ${totalPontos}`;
+            alert(`Você ganhou ${pontos} pontos!`);
+        }
+    </script>
+</body>
+</html>

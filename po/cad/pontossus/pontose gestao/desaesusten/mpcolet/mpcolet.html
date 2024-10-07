@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Coleta e Reciclagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+        function initMap() {
+            const center = { lat: -23.550520, lng: -46.633308 }; // Coordenadas de São Paulo
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: center,
+            });
+
+            // Pontos de coleta e reciclagem
+            const locations = [
+                { lat: -23.561, lng: -46.656, name: "Ponto de Coleta 1" },
+                { lat: -23.543, lng: -46.640, name: "Ponto de Coleta 2" },
+                { lat: -23.570, lng: -46.654, name: "Ponto de Coleta 3" },
+                { lat: -23.558, lng: -46.634, name: "Ponto de Reciclagem 1" },
+            ];
+
+            // Adiciona marcadores no mapa
+            locations.forEach(location => {
+                const marker = new google.maps.Marker({
+                    position: { lat: location.lat, lng: location.lng },
+                    map: map,
+                    title: location.name,
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Mapa de Coleta e Reciclagem</h1>
+    <div id="map"></div>
+</div>
+
+<script>
+    window.onload = initMap; // Inicializa o mapa quando a página carrega
+</script>
+
+</body>
+</html>
